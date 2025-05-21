@@ -1,6 +1,6 @@
 # 🪣 Containers - Custom implementation of STL containers
 
-A light weight C++ container library, similar to STL in CPP
+A lightweight and elegant C++ container library, mirroring the functionality of the Standard Template Library (STL).
 
 
 ## Usage
