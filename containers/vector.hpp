@@ -1,6 +1,7 @@
 #pragma once
 #include <memory>
 #include <stdexcept>
+#include <initializer_list>
 using namespace std;
 
 namespace mystl {
@@ -35,6 +36,32 @@ public:
         for (int i = 0; i < size; i++)
             data[i] = value;
     }
+
+    // constructor with intialisation list
+    vector(std::initializer_list<T> init) {
+        capacity = init.size();
+        nextIndex = capacity;
+        data = new T[capacity];
+    
+        int i = 0;
+        for (const T& val : init) {
+            data[i++] = val;
+        }
+    }
+    
+    // constructor from iterator
+    template<typename InputIterator>
+    vector(InputIterator first, InputIterator last) {
+        int size = last - first;
+        data = new T[size];
+        nextIndex = size;
+        capacity = size;
+
+        int index = 0;
+        for (InputIterator it = first; it != last; ++it) {
+             data[index++] = *it;
+        }
+}
 
     // copy constructor
     vector(const vector& v) {

@@ -22,7 +22,7 @@ int main() {
         freopen("/Users/nitinkumar/Desktop/containers/output.txt", "w", stdout);
     #endif
 
-    mystl::vector<int> vct; 
+    mystl::vector<int> vct = {2,3,4}; 
 
     vct.push_back(4);
     vct.push_back(6);
