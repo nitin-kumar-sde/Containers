@@ -75,3 +75,31 @@ int main() {
 }
 
 ```
+
+### ♟️ Priority Queue
+A generic, efficient heap-based priority_queue supporting:
+
+- Any data type (templated)
+- Min-heap or Max-heap via custom comparator (➤ Max-Heap (Default))
+- Namespace mystl to avoid STL conflicts
+- Optimized push/pop using heapify logic
+
+**Example:**
+
+```
+#include <iostream>
+#include "containers/priority_queue.hpp"
+int main() {
+
+    mystl::priority_queue<int, greater<int>> pq;
+    pq.push(1);
+    pq.push(4);
+    pq.push(3);
+
+    cout << pq.top() << endl;
+    pq.pop();
+    cout << pq.top() << endl;
+    return 0;
+}
+
+```
