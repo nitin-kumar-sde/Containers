@@ -1,5 +1,6 @@
 #include <iostream>
 #include "containers/vector.hpp"
+#include "containers/unordered_map.hpp"
 #include <algorithm>
 #include <cmath>
 #include <fstream>
@@ -32,7 +33,20 @@ int main() {
         cout << vct[i] << " ";
     }
 
+    mystl::unordered_map<string, int> mp = {{"abc", 45}, {"def", 34}, {"ghi", 67}};
+    mp.insert("abc", 123);
+    cout << mp.getValue("abc") << endl;
+
+    cout << mp["abc"] << endl;
+
     cout << endl;
+
+    mystl::unordered_map<string, int>::iterator it = mp.begin();
+
+    while(it != mp.end()) {
+        cout << it->first << " " << it->second << endl;
+        it++;
+    }
 
     return 0;
 }
