@@ -1,6 +1,8 @@
 #include <iostream>
 #include "containers/vector.hpp"
 #include "containers/unordered_map.hpp"
+#include "containers/priority_queue.hpp"
+
 #include <algorithm>
 #include <cmath>
 #include <fstream>
@@ -48,5 +50,13 @@ int main() {
         it++;
     }
 
+    mystl::priority_queue<int, greater<int>> pq;
+    pq.push(1);
+    pq.push(4);
+    pq.push(3);
+
+    cout << pq.top() << endl;
+    pq.pop();
+    cout << pq.top() << endl;
     return 0;
 }
