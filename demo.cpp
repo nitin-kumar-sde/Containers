@@ -3,6 +3,7 @@
 #include "containers/unordered_map.hpp"
 #include "containers/priority_queue.hpp"
 #include "containers/stack.hpp"
+#include "containers/queue.hpp"
 
 
 #include <algorithm>
@@ -66,6 +67,13 @@ int main() {
     s.push(7);
 
     cout << s.top();
-    
+
+    mystl::queue<int> q;
+    q.push(3);
+    q.push(5);
+    q.push(7);
+
+    cout << q.front();
+    cout << q.back();
     return 0;
 }
