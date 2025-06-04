@@ -103,3 +103,28 @@ int main() {
 }
 
 ```
+### 📚 Stack 
+A generic, efficient stack supporting:
+
+- Any data type (templated)
+- Namespace mystl to avoid STL conflicts
+- Optimized push/pop using linked list O(1)
+
+**Example:**
+
+```
+#include <iostream>
+#include "containers/stack.hpp"
+int main() {
+
+ mystl::stack<int> s;
+    s.push(3);
+    s.push(5);
+    s.push(7);
+
+    cout << s.top() << endl;
+    s.pop();
+    cout << s.top() << endl;
+    return 0;
+}
+```
