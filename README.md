@@ -143,14 +143,45 @@ A generic, efficient queue supporting:
 #include "containers/queue.hpp"
 int main() {
 
- mystl::queue<int> s;
-    s.push(3);
-    s.push(5);
-    s.push(7);
+ mystl::queue<int> q;
+    q.push(3);
+    q.push(5);
+    q.push(7);
 
-    cout << s.front() << endl;
-    s.pop();
-    cout << s.back() << endl;
+    cout << q.front() << endl;
+    q.pop();
+    cout << q.back() << endl;
+    return 0;
+}
+```
+
+### 🧺 Deque
+
+A generic, efficient deque supporting:
+
+- Any data type (templated)
+- Namespace mystl to avoid STL conflicts
+- Optimized push/pop at front and back using linked list O(1)
+- Initialisation list at creation time
+- Index access
+
+**Example:**
+
+```
+#include <iostream>
+#include "containers/deque.hpp"
+int main() {
+
+ mystl::deque<int> dq;
+    dq.push_back(3);
+    dq.push_front(5);
+    dq.push_back(7);
+
+    cout << dq.front() << endl;
+    dq.pop_front();
+    cout << dq.back() << endl;
+    dq.pop_back();
+    cout << dq.back() << endl;
     return 0;
 }
 ```
