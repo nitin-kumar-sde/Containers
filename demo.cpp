@@ -2,6 +2,8 @@
 #include "containers/vector.hpp"
 #include "containers/unordered_map.hpp"
 #include "containers/priority_queue.hpp"
+#include "containers/stack.hpp"
+
 
 #include <algorithm>
 #include <cmath>
@@ -58,5 +60,12 @@ int main() {
     cout << pq.top() << endl;
     pq.pop();
     cout << pq.top() << endl;
+    mystl::stack<int> s;
+    s.push(3);
+    s.push(5);
+    s.push(7);
+
+    cout << s.top();
+    
     return 0;
 }
