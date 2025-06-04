@@ -12,7 +12,20 @@ git clone https://github.com/nitin-kumar-sde/containers.git
 cd containers
 ```
 
-### 📦 Vector
+---
+
+## 📚 Table of Contents
+
+- [📦 Vector](#-vector)
+- [🌍 Unordered Map](#-unordered-map)
+- [♟️ Priority Queue](#-priority-queue)
+- [📚 Stack](#-stack)
+- [⌛ Queue](#-queue)
+- [🧺 Deque](#-deque)
+
+---
+
+## 📦 Vector
 
 A dynamic array implementation with:
 - Automatic resizing  
@@ -43,7 +56,7 @@ int main() {
 
 ---
 
-### 🌍 unordered_map
+## 🔮 Unordered Map
 
 A hash table based key-value store with:
 
@@ -76,7 +89,7 @@ int main() {
 
 ```
 
-### ♟️ Priority Queue
+## 👑 Priority Queue
 A generic, efficient heap-based priority_queue supporting:
 
 - Any data type (templated)
@@ -103,7 +116,7 @@ int main() {
 }
 
 ```
-### 📚 Stack 
+## 📚 Stack 
 A generic, efficient stack supporting:
 
 - Any data type (templated)
@@ -129,7 +142,7 @@ int main() {
 }
 ```
 
-### ⌛ Queue
+## ⌛ Queue
 A generic, efficient queue supporting:
 
 - Any data type (templated)
@@ -155,7 +168,7 @@ int main() {
 }
 ```
 
-### 🧺 Deque
+## 🧺 Deque
 
 A generic, efficient deque supporting:
 
