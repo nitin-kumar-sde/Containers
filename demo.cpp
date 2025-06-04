@@ -4,6 +4,7 @@
 #include "containers/priority_queue.hpp"
 #include "containers/stack.hpp"
 #include "containers/queue.hpp"
+#include "containers/deque.hpp"
 
 
 #include <algorithm>
@@ -75,5 +76,14 @@ int main() {
 
     cout << q.front();
     cout << q.back();
+
+    mystl::deque<int> dq = {3, 5, 7};
+    dq.push_back(9);
+    dq.push_front(11);
+
+    for(int i = 0;i<dq.size();i++) {
+        cout << dq[i] << " ";
+    }
+    
     return 0;
 }
