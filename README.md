@@ -128,3 +128,29 @@ int main() {
     return 0;
 }
 ```
+
+### ⌛ Queue
+A generic, efficient queue supporting:
+
+- Any data type (templated)
+- Namespace mystl to avoid STL conflicts
+- Optimized push/pop using linked list O(1)
+
+**Example:**
+
+```
+#include <iostream>
+#include "containers/queue.hpp"
+int main() {
+
+ mystl::queue<int> s;
+    s.push(3);
+    s.push(5);
+    s.push(7);
+
+    cout << s.front() << endl;
+    s.pop();
+    cout << s.back() << endl;
+    return 0;
+}
+```
