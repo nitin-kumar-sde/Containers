@@ -16,6 +16,7 @@ cd containers
 
 ## 📚 Table of Contents
 - [👩‍❤️‍👨 Pair](#-pair)
+- [🌙🌗🪐 Tuple](#-tuple)
 - [📦 Vector](#-vector)
 - [🌍 Unordered Map](#-unordered-map)
 - [♟️ Priority Queue](#-priority-queue)
@@ -42,6 +43,23 @@ int main() {
 }
 ```
 
+## 🌙🌗🪐 Tuple
+A generic, efficient tuple similar to STL in mystl namespace:
+
+```
+#include <iostream>
+#include "utilities/tuple.hpp"
+
+int main() {
+
+    mystl::tuple<int, string> p2 = {3, "nitin"};
+
+    cout << get<1>(p2) << " : " << get<0>(p2);
+
+    return 0;
+}
+
+```
 ## 📦 Vector
 
 A dynamic array implementation with:
