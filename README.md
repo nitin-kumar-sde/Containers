@@ -15,7 +15,7 @@ cd containers
 ---
 
 ## 📚 Table of Contents
-
+- [👩‍❤️‍👨 Pair](#-pair)
 - [📦 Vector](#-vector)
 - [🌍 Unordered Map](#-unordered-map)
 - [♟️ Priority Queue](#-priority-queue)
@@ -24,6 +24,23 @@ cd containers
 - [🧺 Deque](#-deque)
 
 ---
+
+## 👫 Pair 
+A generic, efficient pair similar to STL in mystl namespace:
+
+```
+#include <iostream>
+#include "utilities/pair.hpp"
+
+int main() {
+
+    mystl::pair<int, string> p = {3, "nitin"};
+
+    cout << p.first << " : " << p.second;
+
+    return 0;
+}
+```
 
 ## 📦 Vector
 
