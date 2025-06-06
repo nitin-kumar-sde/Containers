@@ -8,26 +8,26 @@ using namespace std;
 namespace mystl {
 
 template <typename K, typename V, typename HashFunc = std::hash<K>>
-class MapNode {
+class UMapNode {
 public:
     K key;
     V value;
-    MapNode* next;
+    UMapNode* next;
 
-    MapNode(K key, V value) {
+    UMapNode(K key, V value) {
         this->key = key;
         this->value = value;
         next = nullptr;
     }
 
-    ~MapNode() {
+    ~UMapNode() {
         delete next;
     }
 };
 
 template <typename K, typename V, typename HashFunc = std::hash<K>>
 class unordered_map {
-    MapNode<K, V>** buckets;
+    UMapNode<K, V>** buckets;
     int count;
     int numBuckets;
     float maxLoadFactor;
@@ -38,7 +38,7 @@ public:
         count = 0;
         numBuckets = 5;
         maxLoadFactor = 0.7f;
-        buckets = new MapNode<K, V>*[numBuckets];
+        buckets = new UMapNode<K, V>*[numBuckets];
         for (int i = 0; i < numBuckets; i++) {
             buckets[i] = nullptr;
         }
@@ -58,8 +58,8 @@ public:
     }
 
     class iterator {
-        MapNode<K, V>* current;
-        MapNode<K, V>** buckets;
+        UMapNode<K, V>* current;
+        UMapNode<K, V>** buckets;
         int index;
         int numBuckets;
         mutable std::unique_ptr<std::pair<const K, V>> currentPairPtr;
@@ -71,7 +71,7 @@ public:
         }
 
     public:
-        iterator(MapNode<K, V>** buckets, int numBuckets, int startIndex = 0)
+        iterator(UMapNode<K, V>** buckets, int numBuckets, int startIndex = 0)
             : buckets(buckets), numBuckets(numBuckets), index(startIndex), current(nullptr) {
             if (index < numBuckets) {
                 current = buckets[index++];
@@ -83,7 +83,7 @@ public:
             return *reinterpret_cast<std::pair<const K, V>*>(&current->key);
         }
 
-        MapNode<K, V>* operator->() const {
+        UMapNode<K, V>* operator->() const {
             return current;
         }
 
@@ -133,7 +133,7 @@ public:
 
     void insert(K key, V value) {
         int bucketIndex = getBucketIndex(key);
-        MapNode<K, V>* head = buckets[bucketIndex];
+        UMapNode<K, V>* head = buckets[bucketIndex];
 
         while (head != nullptr) {
             if (head->key == key) {
@@ -144,7 +144,7 @@ public:
         }
 
         head = buckets[bucketIndex];
-        MapNode<K, V>* node = new MapNode<K, V>(key, value);
+        UMapNode<K, V>* node = new UMapNode<K, V>(key, value);
         node->next = head;
         buckets[bucketIndex] = node;
         count++;
@@ -157,8 +157,8 @@ public:
 
     V remove(K key) {
         int bucketIndex = getBucketIndex(key);
-        MapNode<K, V>* head = buckets[bucketIndex];
-        MapNode<K, V>* prev = nullptr;
+        UMapNode<K, V>* head = buckets[bucketIndex];
+        UMapNode<K, V>* prev = nullptr;
 
         while (head != nullptr) {
             if (head->key == key) {
@@ -181,7 +181,7 @@ public:
 
     V getValue(K key) {
         int bucketIndex = getBucketIndex(key);
-        MapNode<K, V>* head = buckets[bucketIndex];
+        UMapNode<K, V>* head = buckets[bucketIndex];
         while (head != nullptr) {
             if (head->key == key) {
                 return head->value;
@@ -193,7 +193,7 @@ public:
 
     V& operator[](const K& key) {
         int bucketIndex = getBucketIndex(key);
-        MapNode<K, V>* head = buckets[bucketIndex];
+        UMapNode<K, V>* head = buckets[bucketIndex];
         while (head != nullptr) {
             if (head->key == key) {
                 return head->value;
@@ -216,9 +216,9 @@ private:
     void rehash() {
         int oldNumBuckets = numBuckets;
         numBuckets *= 2;
-        MapNode<K, V>** oldBuckets = buckets;
+        UMapNode<K, V>** oldBuckets = buckets;
 
-        buckets = new MapNode<K, V>*[numBuckets];
+        buckets = new UMapNode<K, V>*[numBuckets];
         for (int i = 0; i < numBuckets; i++) {
             buckets[i] = nullptr;
         }
@@ -226,10 +226,10 @@ private:
         count = 0;
 
         for (int i = 0; i < oldNumBuckets; i++) {
-            MapNode<K, V>* head = oldBuckets[i];
+            UMapNode<K, V>* head = oldBuckets[i];
             while (head != nullptr) {
                 insert(head->key, head->value);
-                MapNode<K, V>* temp = head;
+                UMapNode<K, V>* temp = head;
                 head = head->next;
                 temp->next = nullptr;
                 delete temp;

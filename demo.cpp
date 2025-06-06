@@ -1,6 +1,7 @@
 #include <iostream>
 #include "containers/vector.hpp"
 #include "containers/unordered_map.hpp"
+#include "containers/map.hpp"
 #include "containers/priority_queue.hpp"
 #include "containers/stack.hpp"
 #include "containers/queue.hpp"
@@ -54,6 +55,15 @@ int main() {
     while(it != mp.end()) {
         cout << it->first << " " << it->second << endl;
         it++;
+    }
+
+    mystl::map<string, int> mp2 = {{"abc", 45}, {"ghi", 34}, {"deg", 67}};
+    mp2.insert("abc", 123);
+    mystl::map<string, int>::iterator it2 = mp2.begin();
+
+    while(it2 != mp2.end()) {
+        cout << it2->first << " " << it2->second << endl;
+        it2++;
     }
 
     mystl::priority_queue<int, greater<int>> pq;
