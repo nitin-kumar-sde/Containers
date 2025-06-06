@@ -127,5 +127,25 @@ int main() {
     else
         cout << "5 not found" << endl;
 
+    mystl::set<int> ust;
+    ust.insert(10);
+    ust.insert(5);
+    ust.insert(20);
+    ust.insert(10);
+
+    for (auto it = ust.begin(); it != ust.end(); ++it) {
+        cout << *it << " ";
+    }
+
+    ust.erase(10);
+
+    for (auto x : ust) cout << x << " ";
+
+    auto uf = ust.find(5);
+
+    if (uf != ust.end())
+        cout << "5 is found" << endl;
+    else
+        cout << "5 not found" << endl;
     return 0;
 }
