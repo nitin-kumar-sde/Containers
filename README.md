@@ -18,7 +18,8 @@ cd containers
 - [👩‍❤️‍👨 Pair](#-pair)
 - [🌙🌗🪐 Tuple](#-tuple)
 - [📦 Vector](#-vector)
-- [🌍 Unordered Map](#-unordered-map)
+- [🌍 Map](#-map)
+- [🔮 Unordered Map](#-unordered-map)
 - [♟️ Priority Queue](#-priority-queue)
 - [📚 Stack](#-stack)
 - [⌛ Queue](#-queue)
@@ -90,6 +91,38 @@ int main() {
 ```
 
 ---
+## 🌍 Map
+
+A map container based on AVL trees
+
+- Efficient insert, delete and find in O(logn)  
+- Iterators for traversal using range-based loops  
+- Custom comparator for ordering  
+
+**Example:**
+
+```cpp
+#include "containers/map.hpp"
+#include <iostream>
+#include <string>
+
+int main() {
+    mystl::map<std::string, int> map;
+    map.insert("apple", 3);
+    map.insert("banana", 5);
+    map.insert("orange", 2);
+
+    for (auto it = map.begin(); it != map.end(); ++it) {
+        std::cout << it->first << ": " << it->second << std::endl;
+    }
+
+    std::cout << "Value for key 'banana': " << map.getValue("banana") << std::endl;
+
+    return 0;
+}
+
+```
+---
 
 ## 🔮 Unordered Map
 
@@ -123,6 +156,7 @@ int main() {
 }
 
 ```
+
 
 ## 👑 Priority Queue
 A generic, efficient heap-based priority_queue supporting:
