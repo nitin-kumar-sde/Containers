@@ -9,6 +9,8 @@
 #include "utilities/pair.hpp"
 #include "utilities/tuple.hpp"
 #include "containers/set.hpp"
+#include "containers/unordered_set.hpp"
+
 
 
 #include <algorithm>
@@ -127,7 +129,7 @@ int main() {
     else
         cout << "5 not found" << endl;
 
-    mystl::set<int> ust;
+    mystl::unordered_set<int> ust;
     ust.insert(10);
     ust.insert(5);
     ust.insert(20);
