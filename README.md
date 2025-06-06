@@ -20,6 +20,8 @@ cd containers
 - [📦 Vector](#-vector)
 - [🌍 Map](#-map)
 - [🔮 Unordered Map](#-unordered-map)
+- [🗽 Set](#-set)
+- [🗼 Unordered Set](#-unordered-set)
 - [♟️ Priority Queue](#-priority-queue)
 - [📚 Stack](#-stack)
 - [⌛ Queue](#-queue)
@@ -157,7 +159,105 @@ int main() {
 
 ```
 
+## 🗽 Set 
+A set container based on AVL trees
 
+- Efficient insert, delete and find in O(logn)  
+- Iterators for traversal using range-based loops  
+- Custom comparator for ordering
+
+```
+#include <iostream>
+#include "containers/set.hpp"
+
+
+#include <algorithm>
+#include <cmath>
+#include <fstream>
+
+#define ll long long
+#define ld long double
+#define endl '\n'
+#define N 1000005
+#define MOD 1000000007
+
+int main() {
+    mystl::set<int> st;
+    st.insert(10);
+    st.insert(5);
+    st.insert(20);
+    st.insert(10);
+
+    for (auto it = st.begin(); it != st.end(); ++it) {
+        cout << *it << " ";
+    }
+
+    st.erase(10);
+
+    for (auto x : st) cout << x << " ";
+
+    auto uf = st.find(5);
+
+    if (uf != st.end())
+        cout << "5 is found" << endl;
+    else
+        cout << "5 not found" << endl;
+    return 0;
+}
+
+```
+
+---
+
+## 🗼 Unordered Set 
+A set container based on hash tables
+
+- Efficient insert, delete and find in O(1)  
+- Iterators for traversal using range-based loops  
+- Custom hash function support
+
+```
+#include <iostream>
+#include "containers/unordered_set.hpp"
+
+
+#include <algorithm>
+#include <cmath>
+#include <fstream>
+
+#define ll long long
+#define ld long double
+#define endl '\n'
+#define N 1000005
+#define MOD 1000000007
+
+int main() {
+    mystl::unordered_set<int> ust;
+    ust.insert(10);
+    ust.insert(5);
+    ust.insert(20);
+    ust.insert(10);
+
+    for (auto it = ust.begin(); it != ust.end(); ++it) {
+        cout << *it << " ";
+    }
+
+    ust.erase(10);
+
+    for (auto x : ust) cout << x << " ";
+
+    auto uf = ust.find(5);
+
+    if (uf != ust.end())
+        cout << "5 is found" << endl;
+    else
+        cout << "5 not found" << endl;
+    return 0;
+}
+
+```
+
+---
 ## 👑 Priority Queue
 A generic, efficient heap-based priority_queue supporting:
 
