@@ -5,6 +5,7 @@
 #include "containers/stack.hpp"
 #include "containers/queue.hpp"
 #include "containers/deque.hpp"
+#include "utilities/pair.hpp"
 
 
 #include <algorithm>
@@ -84,6 +85,10 @@ int main() {
     for(int i = 0;i<dq.size();i++) {
         cout << dq[i] << " ";
     }
-    
+
+    mystl::pair<int, string> p = {3, "nitin"};
+
+    cout << p.first << " : " << p.second;
+
     return 0;
 }
