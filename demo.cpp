@@ -8,6 +8,7 @@
 #include "containers/deque.hpp"
 #include "utilities/pair.hpp"
 #include "utilities/tuple.hpp"
+#include "containers/set.hpp"
 
 
 #include <algorithm>
@@ -104,6 +105,27 @@ int main() {
     mystl::tuple<int, string> p2 = {3, "nitin"};
 
     cout << get<1>(p2) << " : " << get<0>(p2);
+
+    mystl::set<int> st;
+    st.insert(10);
+    st.insert(5);
+    st.insert(20);
+    st.insert(10);
+
+    for (auto it = st.begin(); it != st.end(); ++it) {
+        cout << *it << " ";
+    }
+
+    st.erase(10);
+
+    for (auto x : st) cout << x << " ";
+
+    auto f = st.find(5);
+
+    if (f != st.end())
+        cout << "5 is found" << endl;
+    else
+        cout << "5 not found" << endl;
 
     return 0;
 }

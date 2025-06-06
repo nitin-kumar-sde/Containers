@@ -1,3 +1,1 @@
-abc 123
-deg 67
-ghi 34
+5 10 20 5 20 5 is found

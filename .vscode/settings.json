@@ -4,6 +4,10 @@
         "__split_buffer": "cpp",
         "string": "cpp",
         "vector": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "deque": "cpp",
+        "map": "cpp",
+        "set": "cpp",
+        "unordered_map": "cpp"
     }
 }
