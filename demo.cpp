@@ -6,6 +6,7 @@
 #include "containers/queue.hpp"
 #include "containers/deque.hpp"
 #include "utilities/pair.hpp"
+#include "utilities/tuple.hpp"
 
 
 #include <algorithm>
@@ -89,6 +90,10 @@ int main() {
     mystl::pair<int, string> p = {3, "nitin"};
 
     cout << p.first << " : " << p.second;
+
+    mystl::tuple<int, string> p2 = {3, "nitin"};
+
+    cout << get<1>(p2) << " : " << get<0>(p2);
 
     return 0;
 }
