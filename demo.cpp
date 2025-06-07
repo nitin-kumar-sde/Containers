@@ -10,7 +10,7 @@
 #include "utilities/tuple.hpp"
 #include "containers/set.hpp"
 #include "containers/unordered_set.hpp"
-
+#include "containers/string.hpp"
 
 
 #include <algorithm>
@@ -150,4 +150,9 @@ int main() {
     else
         cout << "5 not found" << endl;
     return 0;
+
+    mystl::string str = "nitin";
+    str+="kumar";
+    
+    cout << str << endl;
 }
