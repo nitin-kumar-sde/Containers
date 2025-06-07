@@ -18,14 +18,16 @@ cd containers
 - [👩‍❤️‍👨 Pair](#-pair)
 - [🌙🌗🪐 Tuple](#-tuple)
 - [📦 Vector](#-vector)
+- [📚 Stack](#-stack)
+- [⌛ Queue](#-queue)
+- [🧺 Deque](#-deque)
+- [♟️ Priority Queue](#-priority-queue)
 - [🌍 Map](#-map)
 - [🔮 Unordered Map](#-unordered-map)
 - [🗽 Set](#-set)
 - [🗼 Unordered Set](#-unordered-set)
-- [♟️ Priority Queue](#-priority-queue)
-- [📚 Stack](#-stack)
-- [⌛ Queue](#-queue)
-- [🧺 Deque](#-deque)
+- [ 🌿 String](#-string)
+
 
 ---
 
@@ -46,6 +48,8 @@ int main() {
 }
 ```
 
+---
+
 ## 🌙🌗🪐 Tuple
 A generic, efficient tuple similar to STL in mystl namespace:
 
@@ -63,6 +67,9 @@ int main() {
 }
 
 ```
+
+---
+
 ## 📦 Vector
 
 A dynamic array implementation with:
@@ -91,8 +98,121 @@ int main() {
     return 0;
 }
 ```
+---
+
+## 📚 Stack 
+A generic, efficient stack supporting:
+
+- Any data type (templated)
+- Namespace mystl to avoid STL conflicts
+- Optimized push/pop using linked list O(1)
+
+**Example:**
+
+```
+#include <iostream>
+#include "containers/stack.hpp"
+int main() {
+
+ mystl::stack<int> s;
+    s.push(3);
+    s.push(5);
+    s.push(7);
+
+    cout << s.top() << endl;
+    s.pop();
+    cout << s.top() << endl;
+    return 0;
+}
+```
+
+## ⌛ Queue
+A generic, efficient queue supporting:
+
+- Any data type (templated)
+- Namespace mystl to avoid STL conflicts
+- Optimized push/pop using linked list O(1)
+
+**Example:**
+
+```
+#include <iostream>
+#include "containers/queue.hpp"
+int main() {
+
+ mystl::queue<int> q;
+    q.push(3);
+    q.push(5);
+    q.push(7);
+
+    cout << q.front() << endl;
+    q.pop();
+    cout << q.back() << endl;
+    return 0;
+}
+```
+
+## 🧺 Deque
+
+A generic, efficient deque supporting:
+
+- Any data type (templated)
+- Namespace mystl to avoid STL conflicts
+- Optimized push/pop at front and back using linked list O(1)
+- Initialisation list at creation time
+- Index access
+
+**Example:**
+
+```
+#include <iostream>
+#include "containers/deque.hpp"
+int main() {
+
+ mystl::deque<int> dq;
+    dq.push_back(3);
+    dq.push_front(5);
+    dq.push_back(7);
+
+    cout << dq.front() << endl;
+    dq.pop_front();
+    cout << dq.back() << endl;
+    dq.pop_back();
+    cout << dq.back() << endl;
+    return 0;
+}
+```
+---
+
+## 👑 Priority Queue
+A generic, efficient heap-based priority_queue supporting:
+
+- Any data type (templated)
+- Min-heap or Max-heap via custom comparator (➤ Max-Heap (Default))
+- Namespace mystl to avoid STL conflicts
+- Optimized push/pop using heapify logic
+
+**Example:**
+
+```
+#include <iostream>
+#include "containers/priority_queue.hpp"
+int main() {
+
+    mystl::priority_queue<int, greater<int>> pq;
+    pq.push(1);
+    pq.push(4);
+    pq.push(3);
+
+    cout << pq.top() << endl;
+    pq.pop();
+    cout << pq.top() << endl;
+    return 0;
+}
+```
 
 ---
+
 ## 🌍 Map
 
 A map container based on AVL trees
@@ -258,112 +378,17 @@ int main() {
 ```
 
 ---
-## 👑 Priority Queue
-A generic, efficient heap-based priority_queue supporting:
 
-- Any data type (templated)
-- Min-heap or Max-heap via custom comparator (➤ Max-Heap (Default))
-- Namespace mystl to avoid STL conflicts
-- Optimized push/pop using heapify logic
-
-**Example:**
+## 🌿 String 
 
 ```
 #include <iostream>
-#include "containers/priority_queue.hpp"
+#include "containers/string.hpp"
+
 int main() {
-
-    mystl::priority_queue<int, greater<int>> pq;
-    pq.push(1);
-    pq.push(4);
-    pq.push(3);
-
-    cout << pq.top() << endl;
-    pq.pop();
-    cout << pq.top() << endl;
-    return 0;
+    mystl::string str = "nitin";
+    str+="kumar";
+    cout << str << endl;
 }
 
-```
-## 📚 Stack 
-A generic, efficient stack supporting:
-
-- Any data type (templated)
-- Namespace mystl to avoid STL conflicts
-- Optimized push/pop using linked list O(1)
-
-**Example:**
-
-```
-#include <iostream>
-#include "containers/stack.hpp"
-int main() {
-
- mystl::stack<int> s;
-    s.push(3);
-    s.push(5);
-    s.push(7);
-
-    cout << s.top() << endl;
-    s.pop();
-    cout << s.top() << endl;
-    return 0;
-}
-```
-
-## ⌛ Queue
-A generic, efficient queue supporting:
-
-- Any data type (templated)
-- Namespace mystl to avoid STL conflicts
-- Optimized push/pop using linked list O(1)
-
-**Example:**
-
-```
-#include <iostream>
-#include "containers/queue.hpp"
-int main() {
-
- mystl::queue<int> q;
-    q.push(3);
-    q.push(5);
-    q.push(7);
-
-    cout << q.front() << endl;
-    q.pop();
-    cout << q.back() << endl;
-    return 0;
-}
-```
-
-## 🧺 Deque
-
-A generic, efficient deque supporting:
-
-- Any data type (templated)
-- Namespace mystl to avoid STL conflicts
-- Optimized push/pop at front and back using linked list O(1)
-- Initialisation list at creation time
-- Index access
-
-**Example:**
-
-```
-#include <iostream>
-#include "containers/deque.hpp"
-int main() {
-
- mystl::deque<int> dq;
-    dq.push_back(3);
-    dq.push_front(5);
-    dq.push_back(7);
-
-    cout << dq.front() << endl;
-    dq.pop_front();
-    cout << dq.back() << endl;
-    dq.pop_back();
-    cout << dq.back() << endl;
-    return 0;
-}
 ```
